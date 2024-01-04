@@ -1,7 +1,6 @@
 import React from "react";
 import "../style.css";
 import Btn from "./Button";
-import TextField from "./TextField";
 
 class InputField extends React.Component {
     constructor(props) {
@@ -9,18 +8,17 @@ class InputField extends React.Component {
         this.state = {
             isInputDisabled: false,
             isButtonDisabled: false,
-            isTextFieldGray: false,
         };
     }
     onButtonClick = () => {
         this.setState({
             isInputDisabled: true,
             isButtonDisabled: true,
-            isTextFieldGray: true,
         });
+        this.props.onButtonClick();
     };
   render() {
-      const {isInputDisabled, isButtonDisabled, isTextFieldGray} = this.state;
+      const {isInputDisabled, isButtonDisabled} = this.state;
       return (
             <div className="input-container">
               <input
@@ -28,13 +26,13 @@ class InputField extends React.Component {
                   disabled={isInputDisabled}
               />
               <Btn
-                  name = 'Get info'
+                  name='Get info'
                   className="btn"
                   onClick={this.onButtonClick}
                   disabled={isButtonDisabled}
               />
-                <TextField isTextFieldGray={isTextFieldGray} />
             </div>
+
         )
   }
 }

@@ -1,5 +1,6 @@
 import React from "react";
 import "../style.css";
+
 class TextField extends React.Component {
 
     render() {
@@ -12,7 +13,7 @@ class TextField extends React.Component {
                     <div className="info id">Id</div>
                 </div>
                 <p className="text-field_info">
-                        "name": "Luke Skywalker"
+                    "name": "Luke Skywalker"
                 </p>
             </div>
         )
